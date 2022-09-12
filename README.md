@@ -15,8 +15,8 @@ To get a local copy up and running follow these simple example steps.
 ## Authors
 👤 **Felix Odete**
 
-- GitHub: [@jasonfelice](https://github.com/felixodette)
-- Twitter: [@jasonfelice0](https://twitter.com/Odette3000)
+- GitHub: [@felixodette](https://github.com/felixodette)
+- Twitter: [@Odette3000](https://twitter.com/Odette3000)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/felixodete/)
 
 
