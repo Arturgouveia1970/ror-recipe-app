@@ -1,9 +1,9 @@
 class UserController < ApplicationController
   def index
-    #index
+    # index
   end
 
   def show
-    #index
+    # show
   end
 end
