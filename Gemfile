@@ -42,6 +42,11 @@ gem 'jbuilder'
 # Use devise for authorization
 gem 'devise'
 
+# Use bootstrap 4
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
+gem 'sass-rails'
+
 # Use for styling
 gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
 
