@@ -6,11 +6,14 @@
 #
 default: &default
   adapter: postgresql
-  encoding: Unicode
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: ror_recipe_app_development
+  username: postgres
+  password: 'administrator'
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
