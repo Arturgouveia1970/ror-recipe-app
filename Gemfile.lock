@@ -87,6 +87,7 @@ GEM
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
     builder (3.2.4)
+    cancancan (3.4.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -309,6 +310,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bootstrap (~> 4.0.0)
+  cancancan
   capybara
   debug
   devise

@@ -7,7 +7,6 @@ class InventoryFoodsController < ApplicationController
     else
       flash[:alert] = 'Error! Please try again later.'
     end
-
     redirect_to inventory_path(params[:id])
   end
 
@@ -20,12 +19,16 @@ class InventoryFoodsController < ApplicationController
     food_list = params[:inventory_food][:food_list]
     food_list = food_list.drop(1)
     food_list.each do |food|
-      Food.find(food.to_i).quantity
+      next unless InventoryFood.where(food_id: food.to_i, inventory_id: params[:id]).blank?
+
+      new_inventory_food = InventoryFood.new(food_id: food.to_i, quantity: params[:inventory_food][:quantity],
+                                             inventory_id: params[:id])
+      new_inventory_food.save
     end
-    redirect_to inventory_path(params[:id]), flash: { success: 'Inventory has been created succesfully!' }
+    redirect_to inventory_path(params[:id]), flash: { success: 'Inventory food has been added successfully!' }
   end
 
   def inventory_food_params
-    params.require(:inventory_food).permit(:food_list)
+    params.require(:inventory_food).permit(:food_list, :quantity)
   end
 end
