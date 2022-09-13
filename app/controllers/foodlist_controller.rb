@@ -31,7 +31,7 @@ class FoodsController < ApplicationController
           format.html { render :new, status: :unprocessable_entity }
           format.json { render json: @food.errors, status: :unprocessable_entity }
         end
-      end
+    end
   end
 
   # PATCH/PUT /foods/1 or /foods/1.json
@@ -44,7 +44,7 @@ class FoodsController < ApplicationController
           format.html { render :edit, status: :unprocessable_entity }
           format.json { render json: @food.errors, status: :unprocessable_entity }
         end
-      end
+    end
   end
 
   # DELETE /foods/1 or /foods/1.json
@@ -54,10 +54,10 @@ class FoodsController < ApplicationController
     respond_to do |format|
         format.html { redirect_to foods_url, notice: 'Food was successfully destroyed.' }
         format.json { head :no_content }
-      end
+    end
   end
 
-    private
+  private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_food
