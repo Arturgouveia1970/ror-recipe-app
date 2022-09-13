@@ -6,22 +6,20 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 development:
   <<: *default
-  database: ror_recipe_app_development
-  username: postgres
-  password: 'administrator'
+  database: postgresql
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ror_recipe_app_test
+  database: postgresql
 
 production:
   <<: *default
-  database: ror_recipe_app_production
+  database: postgresql
