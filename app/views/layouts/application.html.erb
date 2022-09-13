@@ -12,11 +12,11 @@
 </head>
 
 <body>
-  <% if current_user %>
-    <%= render partial: "shared/navbar" %>
-  <% end %>
-  <%= render partial: "shared/flash" %>
+<% if current_user %>
+  <%= render partial: "shared/navbar" %>
+<% end %>
+<%= render partial: "shared/flash" %>
 
-  <%= yield %>
+<%= yield %>
 </body>
 </html>
