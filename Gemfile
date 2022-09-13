@@ -42,6 +42,9 @@ gem 'jbuilder'
 # Use devise for authorization
 gem 'devise'
 
+# Use cancancan
+gem 'cancancan'
+
 # Use bootstrap 4
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'

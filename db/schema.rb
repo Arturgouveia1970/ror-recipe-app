@@ -12,28 +12,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 20_220_913_101_756) do
-=======
->>>>>>> 269061f99c4fb93f4c2e0b01776a78027d23c2fc
+
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
-  create_table 'inventories', force: :cascade do |t|
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.text 'description'
-  end
 
-  create_table 'recipes', force: :cascade do |t|
-    t.string 'name'
-    t.time 'preparation_time'
-    t.time 'cooking_time'
-    t.text 'description'
-    t.boolean 'public'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'user_id'
   end
 
   create_table 'users', force: :cascade do |t|
