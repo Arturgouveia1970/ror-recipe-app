@@ -4,4 +4,3 @@ class RecipesController < ApplicationController
   # GET /recipes or /recipes.json
 
 end
-end
