@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class InventoriesController < ApplicationController
   def index
     @user = current_user
