@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class InventoryFoodsController < ApplicationController
   def destroy
     @inventory_food = InventoryFood.find_by(id: params[:food_id])
