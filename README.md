@@ -43,15 +43,18 @@ In your browser, go to
 
 
 ## Authors
-👤 ** Artur Gouveia**
-
-GitHub Twitter LinkedIn
 
 👤 **Felix Odete**
 
 - GitHub: [@felixodette](https://github.com/felixodette)
 - Twitter: [@Odette3000](https://twitter.com/Odette3000)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/felixodete/)
+
+👤 **Artur Gouveia**
+
+[GitHub](https://github.com/Arturgouveia1970)
+[Twitter](https://twitter.com/@arturgouveia10)
+[LinkedIn](https://www.linkedin.com/in/artur-gouveia-323868197/)
 
 👤 **Emmanuel Mensah**
 

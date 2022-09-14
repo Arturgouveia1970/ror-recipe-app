@@ -11,7 +11,7 @@ class FoodsController < ApplicationController
     @foods = Food.find(params[:id])
   end
 
-  # GET /foods/ne
+  # GET /foods/new
   def new
     @food = Food.new
   end
@@ -58,8 +58,7 @@ class FoodsController < ApplicationController
   end
 
   private
-  def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price)
+
   # Use callbacks to share common setup or constraints between actions.
   def set_food
     @food = Food.find(params[:id])

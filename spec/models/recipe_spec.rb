@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
+<<<<<<< HEAD
   subject { Recipe.new(name: 'recipe 1', description: 'testing recipe', cooking_time: 20, preparation_time: 30) }
   before { subject.save }
 
@@ -23,4 +24,7 @@ RSpec.describe Recipe, type: :model do
     subject.preparation_time = nil
     expect(subject).to_not be_valid
   end
+=======
+  pending "add some examples to (or delete) #{__FILE__}"
+>>>>>>> develop
 end

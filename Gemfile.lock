@@ -264,6 +264,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap (~> 4.0.0)
   cancancan
   capybara
   childprocess
