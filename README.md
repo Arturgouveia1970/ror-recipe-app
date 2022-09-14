@@ -13,6 +13,7 @@ To get a local copy up and running follow these simple example steps.
 - Run `Rspec spec` to run tests.
 
 ## Authors
+
 👤 **Felix Odete**
 
 - GitHub: [@felixodette](https://github.com/felixodette)
