@@ -7,9 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-*
+# .gitignore
+
+node_modules
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -33,8 +33,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-node_modules/
 
-# IntelliJ Idea system folders
-.idea/
-.idea
+/app/assets/builds/*
+!/app/assets/builds/.keep
