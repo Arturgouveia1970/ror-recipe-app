@@ -1,42 +1,56 @@
 class InventoriesController < ApplicationController
+  before_action :inventory, only: %i[show edit update destroy]
+
   def index
-    @user = current_user
-    @inventories = @user.inventories
+    @inventories = Inventory.includes(:user).where(user: current_user.id).all
   end
 
   def show
-    @user = current_user
-    @inventory = @user.inventories.find(params[:id])
-    @foods = @inventory.inventory_foods.includes(:food)
-  end
-
-  def new
-    @inventory = Inventory.new
+    @inventory = inventory.includes(:user, inventory_foods: [:user]).find(params[:id])
+    authorize! :read, @inventory
   end
 
   def create
-    @inventory = Inventory.new(inventory_params)
-    @inventory.user_id = current_user.id
+    inventory = params[:inventory]
+    # authorize! :manage, inventory
+    # user = User.find(params[:user_id])
+    inventory = Inventory.new(inventory.permit(:name, :description))
+    inventory.user_id = current_user.id
+    respond_to do |format|
+      format.html do
+        if inventory.save
+          # success message
+          flash[:success] = 'inventory saved successfully'
+          # redirect to index
+          redirect_to inventories_path
+        else
+          # error message
+          flash.now[:error] = 'Error: inventory could not be saved'
+          # render new
+          render :new, locals: { inventory: }
+        end
+      end
+    end
 
-    render :new unless @inventory.save
-
-    redirect_to inventories_path
+    def new # rubocop:disable Lint/NestedMethodDefinition
+      # authorize! :manage, inventory
+      inventory = Inventory.new
+      respond_to do |format|
+        format.html { render :new, locals: { inventory: } }
+      end
+    end
   end
 
   def destroy
-    @inventory = Inventory.find_by(id: params[:id])
+    # Perform the lookup
+    @inventory_item = Inventory.find(params[:id])
 
-    if @inventory.destroy
-      flash[:notice] = 'Inventory deleted!'
-    else
-      flash[:alert] = 'Error! Please try again later.'
+    # Destroy/delete the record
+    @inventory_item.destroy
+
+    # Redirect
+    respond_to do |format|
+      format.html { redirect_to inventories_path, notice: 'Inventory was removed.' }
     end
-    redirect_to inventories_path
-  end
-
-  private
-
-  def inventory_params
-    params.require(:inventory).permit(:name, :description)
   end
 end
