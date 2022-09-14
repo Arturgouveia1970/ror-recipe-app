@@ -1,0 +1,133 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+/*
+form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.food-btn {
+  width: 95%;
+  text-align: end;
+}
+
+.add-food {
+  background: #22a813;
+  color: #fff;
+  border-radius: 8px;
+  border: 2px solid #000;
+  padding: 0.2rem 0.4rem;
+  text-decoration: none;
+}
+
+hr {
+  width: 80%;
+  height: 5rem;
+  color: #000;
+  filter: drop-shadow(5px 5px 5px #000);
+}
+
+.table {
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+th {
+  background: #d1d1d1;
+}
+
+table,
+th,
+td {
+  padding: 0.5rem 0;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.nav-ul {
+  display: flex;
+  gap: 15px;
+}
+
+.inventory {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.inventory-desc {
+  width: 50%;
+}
+
+.inventory-container {
+  display: flex;
+  flex-direction: row;
+  width: 65%;
+  padding: 2rem 4rem;
+  margin: 2rem;
+  border: 2px solid #000;
+}
+
+.btn-inv {
+  margin-bottom: 8rem;
+  color: #0069e1;
+  border: 2px solid #000;
+  margin: 0 0 50px 0;
+}
+
+.content {
+  flex-direction: column;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.link-btn {
+  width: auto;
+}
+
+.btn1 {
+  position: relative;
+  left: 85%;
+  margin: 0 0 15px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-btn {
+  margin: 0 0 20px 0;
+}
+
+.remove {
+  margin: 10px 0 0 -100px;
+}
+ */

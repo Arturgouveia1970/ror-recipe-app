@@ -1,0 +1,84 @@
+<h1 class="text-center"><%=  @recipe.name %>
+<% if @recipe.public %>
+    <span class="badge bg-secondary">Public</span>
+    <% else %>
+    <span class="badge bg-secondary">Private</span>
+    <% end %>
+</h1>
+<%#<% if can? :manage, @recipe %>
+<% if @recipe.public %>
+  <%= button_to "Public", update_recipe_path(id: @recipe), method: :patch, class:"btn btn-success btn-sm btn1" %>
+<% else %>
+  <%= button_to "Private", update_recipe_path(@recipe), method: :patch, class:"btn btn-secondary btn-sm btn1" %>
+<% end %>
+<%#<% end %>
+<div class="card w-75 container">
+  <div class="card-body row align-items-between">
+    <div class="col col-md-6 ms-3">
+      <h4 class="fw-bold my-1">Preparation Time: <%= @recipe.preparation_time/60 %> hours <%= @recipe.preparation_time%60 %> minutes</h4>
+      <h4 class="fw-bold my-4">Cooking Time: <%= @recipe.cooking_time/60 %> hours <%= @recipe.cooking_time%60 %> minutes</h4>
+    </div>
+  </div>
+  <div class="row card-body">
+    <div class="card-body col col-md-12">
+      <h4 class="fw-bold my-1">Description</h4>
+      <p class="fs-6">
+        <%= @recipe.description %>
+</div>
+<div class="mt-5 d-flex justify-content-around content">
+  <div class='btn-container'>
+    <button type="button" class="btn btn-primary link-btn" data-bs-toggle="modal" data-bs-target="#recipeModal">
+      Generate shopping list
+    </button>
+    <%= link_to "Add Ingredients", new_recipe_recipe_food_path(@recipe.id), class: "btn btn-outline-dark link-btn" %>
+  </div>
+  <div class="mt-5 d-flex justify-content-around">
+    <div class="col ms-auto d-flex justify-content-between ">
+      <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="recipeModalLabel">Generating shopping list</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <%= form_with url: "/inventory_food/#{:inventory_food_id}/shopping_list/#{:recipe_id}", method: :post do |form| %>
+              <div class="modal-body">
+                Choose an inventory to use:
+                <%= form.select :inventory_id, current_user.inventories.order(:name).pluck(:name, :id), {}, class: "form-select form-select-lg mt-3" %>
+              </div>
+              <div class="modal-footer">
+                <%= form.submit 'Generate', class: "btn btn-primary" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <%#<% if @recipe.user == @current_user%> <%# un-comment this latter %>
+        
+      <%#<% end %> <%# un-comment this latter %>
+      <table>
+        <thead>
+          <tr>
+            <th>Food</th><br/>
+            <br/>
+            <th>Quantity</th>
+            <br/>
+            <th>Value</th>
+            <br/>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @shopping_list.each do |food_item| %>
+          <tr>
+            <td><%= food_item.name %></td>
+            <td><%= food_item.price/2 %> grams</td>
+            <td>$<%= food_item.price %></td>
+            <td><%= link_to 'Remove', url: "/shopping_list/id" %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+</div>
