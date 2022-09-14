@@ -19,6 +19,12 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@Odette3000](https://twitter.com/Odette3000)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/felixodete/)
 
+👤 **Artur Gouveia**
+
+[GitHub](https://github.com/Arturgouveia1970)
+[Twitter](https://twitter.com/@arturgouveia10)
+[LinkedIn](https://www.linkedin.com/in/artur-gouveia-323868197/)
+
 
 ## 🤝 Contributing
 
