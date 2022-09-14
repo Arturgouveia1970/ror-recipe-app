@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ShoppingListsController < ApplicationController
   def generate
     recipe_food = RecipeFood.where(recipe_id: shopping_params[:recipe_id])
