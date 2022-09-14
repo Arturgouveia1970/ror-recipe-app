@@ -1,0 +1,18 @@
+
+<%= form_with model: @recipe, url: user_recipe_index_path, local: true, data: {turbo:false} do |f| %>
+
+  <% if @recipe.errors.any? %>
+     <ul class ="errors-decr">
+        <% @recipe.errors.full_messages.each do |errors| %>
+          <li><%= errors %></li>
+        <% end %>
+     </ul>
+  <% end %>
+  <%= f.text_field :name, placeholder:"Recipe name", class:"form-control p-2 mt-2"  %>
+  <%= f.text_field :preparation_time, placeholder:"Preparation time", class:"form-control p-2 mt-2" %>
+  <%= f.text_field :cooking_time, placeholder:"Cooking time", class:"form-control p-2 mt-2" %>
+  <%= f.text_field :description, placeholder:"Description", class:"form-control p-2 mt-2" %>
+  <p><%= f.check_box :public, {}, "true", "false"  %> Make this recipe public</p>
+  <%= f.submit "Save Recipe", class: "btn btn-success btn-md p-2 mt-2" %>
+<% end %>
+

@@ -1,0 +1,21 @@
+<% @recipes.includes([:user]).each do |recipe| %>
+  <%= link_to(recipe_path(recipe.id)) do %>
+  <div id="reciped" class="card d-flex flex-row" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title"><%= recipe.name %></h5>
+      <p class="card-text"> By: <%= recipe.user.name %></p>
+      <% if recipe.public %>
+      <span class="badge bg-secondary">Public</span>
+      <% else %>
+      <span class="badge bg-secondary">Private</span>
+      <% end %>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><p><%= recipe.description %></p></li>
+    </ul>
+  </div>
+  <% end %>
+  <div class="container-btn">
+    <%= button_to "Remove", recipe_path(recipe.id), method: :delete, class: "btn btn-outline-danger remove" %>
+  </div>
+<% end %>

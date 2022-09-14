@@ -1,0 +1,32 @@
+<div><h1>ShoppingList</h1>
+<div>
+<p> Amount of food items to buy: <%= @shopping_list.count %> </p>
+<p>Total value of food needed: <%= @shopping_list.sum(:price) %> </p>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Food</th><br/>
+<br/>
+<th>Quantity</th>
+<br/>
+<th>Value</th>
+<br/>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<% @shopping_list.each do |food_item| %>
+<tr>
+<td><%= food_item.name %></td>
+<td><%= food_item.price/2 %> grams</td>
+<td>$<%= food_item.price %></td>
+<td><%= link_to 'Remove', url: "/shopping_list/id" %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+</div>
+<%= link_to 'Back', foods_path %>
+</div>

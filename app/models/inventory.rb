@@ -1,7 +1,8 @@
 class Inventory < ApplicationRecord
-  validates :name, presence: true, length: { maximum: 100 }
-  validates :description, presence: true, length: { maximum: 200 }
+  belongs_to :user, class_name: 'User', foreign_key: 'user_id'
 
-  belongs_to :user
-  has_many :food
+  has_many :inventory_foods, dependent: :delete_all
+  has_many :foods, through: :inventory_foods, dependent: :destroy
+
+  validates :name, presence: true
 end
