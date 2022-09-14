@@ -62,8 +62,6 @@ In your browser, go to
 - Twitter: [@manuel31mens](https://Twiter.com/@Manuel31mens)
 - LinkedIn: [emmanuel-mensah](www.linkedin.com/in/emmanuel-mensah-)
 
-
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
