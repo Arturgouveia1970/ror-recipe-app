@@ -1,0 +1,27 @@
+<nav class="bg-dark px-2 sm:px-4 py-2.5 sticky w-full z-20 top-0 left-0">
+  <div class="container flex flex-wrap justify-between align-items-center mx-auto">
+     <%= link_to 'Recipe App', root_path, class: "text-xl text-decoration-none font-semibold text-white" %>
+      <ul class="flex flex-col align-items-center md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 mb-0 nav-ul">
+        <% if user_signed_in? %>
+            <li class="nav-item">
+                <%= link_to 'Foods', foods_path, class: "text-decoration-none block py-2 pr-4 pl-3 text-grayLight rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Public_recipe', public_recipes_path, class: "text-decoration-none block py-2 pr-4 pl-3 text-grayLight rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Inventories', user_inventories_path(user_id: current_user), class: "text-decoration-none block py-2 pr-4 pl-3 text-grayLight rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'shopping_list', shopping_list_index_path, class: "text-decoration-none block py-2 pr-4 pl-3 text-grayLight rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" %>
+            </li>
+            <%= button_to "Log Out", destroy_user_session_path, method: :delete, data: { turbo: false }, class:"btn btn-primary" %>
+          <% else %>
+          <div class="container w-auto flex gap-4 bg-blue">
+            <%= link_to "Sign in", new_user_session_path, class: "text-decoration-none flex justify-center align-items-center block text-grayLight rounded  md:hover:text-gray-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:text-white dark:border-gray-700 w-auto py-2 px-2 bg-blue" %>
+            <%= link_to "Sign up", new_user_registration_path, class: "text-decoration-none flex justify-center align-items-center block text-grayLight rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 w-auto py-2 px-2 bg-transparent border md:border-1" %>
+          </div>
+        <% end %>
+       </ul>
+    </diV>
+</nav>
