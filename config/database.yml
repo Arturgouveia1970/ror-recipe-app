@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+
+development:
+  <<: *default
+  database: Recipe_App_development
+  username: postgres # <%= ENV.fetch("DATABASE_USERNAME") {'postgres'} %>
+  password: 12345 # <%= ENV.fetch("DATABASE_PASSWORD") {'12345'} %>
+
+test:
+  <<: *default
+  database: Recipe_App_test
+  username: postgres # <%= ENV.fetch("POSTGRES_USER") { "postgres" } %>
+  password: 12345 #<%= ENV.fetch("POSTGRES_PASSWORD") { "Martial@5009" } %>
+
+production:
+  <<: *default
+  database: Recipe_App_production
+  username: Recipe_App
+  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
