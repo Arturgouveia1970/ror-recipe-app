@@ -1,27 +1,25 @@
+# SQLite. Versions 3.8.0 and up are supported.
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem "sqlite3"
+#
 default: &default
   adapter: postgresql
-  encoding: unicode
-
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-<<<<<<< HEAD
-=======
-
->>>>>>> 70f9108aa23892909e94d82d27f23fca2272d806
+  timeout: 5000
 
 development:
   <<: *default
-  database: Recipe_App_development
-  username: postgres # <%= ENV.fetch("DATABASE_USERNAME") {'postgres'} %>
-  password: 12345 # <%= ENV.fetch("DATABASE_PASSWORD") {'12345'} %>
+  database: postgresql
 
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Recipe_App_test
-  username: postgres # <%= ENV.fetch("POSTGRES_USER") { "postgres" } %>
-  password: 12345 #<%= ENV.fetch("POSTGRES_PASSWORD") { "Martial@5009" } %>
+  database: postgresql
 
 production:
   <<: *default
-  database: Recipe_App_production
-  username: Recipe_App
-  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
+  database: postgresql
